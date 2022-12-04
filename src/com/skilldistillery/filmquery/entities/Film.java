@@ -142,10 +142,8 @@ public class Film {
 
 	@Override
 	public String toString() {
-		return "Film [id=" + id + ", title=" + title + ", description=" + description + ", relYear=" + relYear
-				+ ", lanId=" + lanId + ", renDur=" + renDur + ", renRat=" + renRat + ", length=" + length + ", repCost="
-				+ repCost + ", rating=" + rating + ", specFeat=" + specFeat + "\nLanguage=" + language + "\nActors="
-				+ actors + "]";
+		return "Title of Film = " + title + "\nDescription of Film = " + description + "\nYear Released = " + relYear
+				+  "\nRating = " + rating + "\nLanguage = " + language + "\nActors = "	+ actors;
 	}
 
 	public List<Actor> getActors() {

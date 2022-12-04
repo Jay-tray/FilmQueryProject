@@ -149,13 +149,13 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 	public List<Film> findFilmByKeywords(String keyword) {
 
 		List<Film> listOfFilms = new ArrayList<>();
-		String sql = "SELECT film.* FROM film WHERE film.title LIKE ? OR film.description LIKE ? ";
+		String sql = "SELECT * FROM film WHERE film.title LIKE ? OR film.description LIKE ? ";
 		Film film = null;
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1, "% " + keyword + " %");
-			stmt.setString(2, "% " + keyword + " %");
+			stmt.setString(1, "%" + keyword + "%");
+			stmt.setString(2, "%" + keyword + "%");
 			ResultSet filmResult = stmt.executeQuery();
 
 			while (filmResult.next()) {
